@@ -15,7 +15,6 @@ namespace Experiment{
     //Anfangsfunktion die EventListener verteilt, damit weitere Funktionen gestartet werden können
     function init(){
         document.getElementById("toene").addEventListener("click", setup);
-            
         document.getElementById("lesen").addEventListener("click", lesen);
     }
     //Ton auf dem Button Töne, erzeugt C4 bei klick mit dem Wert einer Halbennot
@@ -27,7 +26,6 @@ namespace Experiment{
     //durchläuft das GPS-Array und speichert in die Variablen die Längengrade(lon), Breitengrade(lat) und Zeit(time)
     function lesen(){
         for (let i:number=0; i < Weg1.features.length; i++){
-            //alert(Weg1.features[i].properties.time +" / "+ Weg1.features[i+1].properties.time);
             //Daten der ersten Koordinaten werden in die Variablen gespeichert
             lat1 = Weg1.features[i].geometry.coordinates[0];
             lon1 = Weg1.features[i].geometry.coordinates[1];
@@ -39,9 +37,7 @@ namespace Experiment{
             let strecke:number=distanz();
             let zeit:number=dauer(time1, time2);
             geschwindigkeit = strecke / zeit;
-            //alert(strecke + " / " + zeit +" = "+geschwindigkeit);
-            music(geschwindigkeit);
-            //alert("test");
+            music(geschwindigkeit, i);
         }
     }
 
@@ -82,30 +78,50 @@ namespace Experiment{
         let zwischen3:number =zwischen2/60; //Minuten durch 60 um Stunden zu erhalten
         return zwischen3; 
     }
-    function music(_geschwindigkeit:number){
-        
-        let kmh:number= Math.round(_geschwindigkeit * 100) /100;
-        //alert(kmh);
-        switch(kmh){
-            case 0:
+    
+
+    function music(_geschwindigkeit:number, _laenge:number){
+        let pause:number=_laenge +1;
+        const now = Tone.now();
+        let kmh:number= Math.round(_geschwindigkeit * 100) /100;//Entscheidend für 
+
+        switch(true){
+            case (kmh <0):
                 note = new Tone.Synth().toDestination();
-                note.triggerAttackRelease("C4", "2n");
+                note.triggerAttackRelease("C4", "4n", now + pause);
                 break;
-            case 1:
+            case (kmh <=0.1):
                 note = new Tone.Synth().toDestination();
-                note.triggerAttackRelease("D4", "2n");
+                note.triggerAttackRelease("C4", "4n", now + pause);
                 break;
-            case 2:
+            case (kmh <=0.2):
                 note = new Tone.Synth().toDestination();
-                note.triggerAttackRelease("e4", "2n");
+                note.triggerAttackRelease("D4", "4n", now + pause);
+                setTimeout(callback, 3000);
                 break;
-            case 3:
+            case (kmh <=0.3):
                 note = new Tone.Synth().toDestination();
-                note.triggerAttackRelease("f4", "2n");
+                note.triggerAttackRelease("F4", "4n", now + pause);
                 break;
-            case 4:
+            case (kmh <=0.6):
                 note = new Tone.Synth().toDestination();
-                note.triggerAttackRelease("g4", "2n");
+                note.triggerAttackRelease("G4", "4n", now + pause);
+                break;
+            case (kmh <=0.8):
+                note = new Tone.Synth().toDestination();
+                note.triggerAttackRelease("A4", "4n", now + pause);
+                break;
+            case (kmh<=2):
+                note = new Tone.Synth().toDestination();
+                note.triggerAttackRelease("B4", "4n", now + pause);
+                break;
+            case (kmh<=3):
+                note = new Tone.Synth().toDestination();
+                note.triggerAttackRelease("C5", "4n", now + pause);
+                break;
+            case (kmh<=4):
+                note = new Tone.Synth().toDestination();
+                note.triggerAttackRelease("d5", "2n", now + pause);
                 break;
             default:
                 break;
