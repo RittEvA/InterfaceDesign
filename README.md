@@ -17,3 +17,5 @@ Gibt es die Möglichkeit meherere Personen die gleiche Strecke laufen zu lassen 
 Wo steht meine Ausgabe? Also der Lautsprecher, hat den jeder für sich steht der am Ende einer Runde.
 
 Kann nachträglich auf die Tonfolge zugeriffen werden?
+
+
