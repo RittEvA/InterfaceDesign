@@ -11,6 +11,8 @@ Viele Dinge werden mit Hilfe von Raum und Zeit angegeben. So sind Töne, Licht u
 Meine Eingabe ist die Geschwindigkeit und die jeweiligen Höhenmeter auf einem Weg. Diese Daten sollen zu Tonhöhe und Tonlänge umgewandelt werden. Somit bekommt ein Weg sein eigenes Klangmuster.
 Konkret jenachdem wie schnell man unterwegs ist wird die Tonlänge kürzer oder länger. Abhängig von den Höhenmeter wird die Tonhöhe angepasst.
 
+Der aktuelle Stand spielt einen bestimmten Weg zu test zwecken durch. Wenn der Button "lesen" geklickt wird, starten die Töne.
+
 ## ungklärte Fragen
 Gibt es die Möglichkeit meherere Personen die gleiche Strecke laufen zu lassen und dann die jeweiligen Tonfolgen gleichzeitig abzu spielen?
 
