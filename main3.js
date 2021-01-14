@@ -16,6 +16,8 @@ var Experiment;
     let tonhoehe;
     let maxG = 0;
     let minG = 100;
+    let maxGe = 0;
+    let minGe = 100;
     let spanneG;
     let teilerG;
     let maxH = 0;
@@ -24,6 +26,7 @@ var Experiment;
     let teilerH;
     let Gkeiten = [];
     let Hoehen = [];
+    let merk = 0;
     //Anfangsfunktion die EventListener verteilt, damit weitere Funktionen gestartet werden können
     function init() {
         document.getElementById("toene").addEventListener("click", setup);
@@ -51,6 +54,12 @@ var Experiment;
             let strecke = distanz();
             let zeit = dauer(time1, time2);
             geschwindigkeit = strecke / zeit;
+            if (maxGe < geschwindigkeit) {
+                maxGe = geschwindigkeit;
+            }
+            if (minGe > geschwindigkeit) {
+                minGe = geschwindigkeit;
+            }
             //alle Geschwindigkeiten in ein Array pushen
             Gkeiten.push(geschwindigkeit);
             //alle Höhendifferenzen in ein Array pushen
@@ -118,79 +127,86 @@ var Experiment;
         minH = Math.min(...Hoehen);
         spanneH = maxH - minH; // um den Switchcase zu bauen
         teilerH = spanneH / 8;
-        alert(maxH + " - " + minH + " = " + spanneH);
         //Maximum und Minimum der Geschwindigkeiten
-        alert(maxG + " / " + minG);
-        maxG = Math.max(...Gkeiten);
-        minG = Math.min(...Gkeiten);
-        spanneG = maxG - minG; //Berechnet die Spanne um dannach den Teiler für die spätere Aufteilung des Switch-Cases zu erhalten
+        //maxG=Math.max(...Gkeiten);
+        //minG=Math.min(...Gkeiten);
+        spanneG = maxGe - minGe; //Berechnet die Spanne um dannach den Teiler für die spätere Aufteilung des Switch-Cases zu erhalten
         teilerG = spanneG / 4;
-        alert(maxG + " - " + minG + " = " + spanneG);
     }
     function music(_geschwindigkeit, _laenge, _hoehe) {
-        let pause = _laenge + 1;
+        let pause = _laenge + merk;
+        //alert(pause + " : " + merk);
         const now = Tone.now();
         let kmh = Math.round(_geschwindigkeit * 100) / 100; //Entscheidend für die Länge des Tons
+        //alert(kmh +" "+ minGe);
         switch (true) { //min; min+teiler*x (1<=x<=4)
-            case (kmh < minG):
+            case (kmh < minGe):
+                alert("wass auch immer");
                 break;
-            case (kmh <= minG + teilerG * 1):
+            case (kmh <= minGe + teilerG * 1):
                 //2n
                 //tonlaenge="2n";
                 break;
-            case (kmh <= minG + teilerG * 2):
+            case (kmh <= minGe + teilerG * 2):
                 //4n
                 tonlaenge = "4n";
+                merk = 1;
                 break;
-            case (kmh <= minG + teilerG * 3):
+            case (kmh <= minGe + teilerG * 3):
                 //8n
                 tonlaenge = "8n";
+                merk = 2;
                 break;
-            case (kmh <= maxG):
+            case (kmh <= maxGe):
                 //16n
                 tonlaenge = "16n";
+                merk = 3;
                 break;
             default:
+                alert("def");
                 break;
         }
+        ;
+        alert(merk + " " + tonlaenge);
         switch (true) { //min; min+teiler2*x (1<=x<=8)
-            case (kmh < minH):
+            case (hoehe < minH):
                 break;
-            case (kmh <= minH + teilerH * 1):
+            case (hoehe <= minH + teilerH * 1):
                 //c4
                 tonhoehe = "c4";
                 break;
-            case (kmh <= minH + teilerH * 2):
+            case (hoehe <= minH + teilerH * 2):
                 //d4
                 tonhoehe = "d4";
                 break;
-            case (kmh <= minH + teilerH * 3):
+            case (hoehe <= minH + teilerH * 3):
                 //e4
                 tonhoehe = "e4";
                 break;
-            case (kmh <= minH + teilerH * 4):
+            case (hoehe <= minH + teilerH * 4):
                 //f4
                 tonhoehe = "f4";
                 break;
-            case (kmh <= minH + teilerH * 5):
+            case (hoehe <= minH + teilerH * 5):
                 //g4
                 tonhoehe = "g4";
                 break;
-            case (kmh <= minH + teilerH * 6):
+            case (hoehe <= minH + teilerH * 6):
                 //a4
                 tonhoehe = "a4";
                 break;
-            case (kmh <= minH + teilerH * 7):
+            case (hoehe <= minH + teilerH * 7):
                 //b4
                 tonhoehe = "b4";
                 break;
-            case (kmh <= minH + teilerH * 8):
+            case (hoehe <= minH + teilerH * 8):
                 //c5
                 tonhoehe = "c5";
                 break;
             default:
                 break;
         }
+        ;
         note = new Tone.Synth().toDestination();
         note.triggerAttackRelease(tonhoehe, tonlaenge, now + pause);
     }
