@@ -1,5 +1,6 @@
 # InterfaceDesign
 
+https://ritteva.github.io/InterfaceDesign/
 Thema: Distanz
 Erstellen Sie ein Userinterface mit mindestens einer Ein- und einer Ausgabe.
 
@@ -20,9 +21,11 @@ Möglicherweise ein Stop-Button insofern das abbrechen von Tönen im Browser mö
 ## ungklärte Fragen
 Gibt es die Möglichkeit meherere Personen die gleiche Strecke laufen zu lassen und dann die jeweiligen Tonfolgen gleichzeitig abzu spielen?
 
-Wo steht meine Ausgabe? Also der Lautsprecher, hat den jeder für sich steht der am Ende einer Runde.
+Wo steht/ist meine Ausgabe? Also der Lautsprecher, hat den jeder für sich steht der am Ende einer Runde.
 
 Kann nachträglich auf die Tonfolge zugeriffen werden?
+Gleichzeitiges/paralleles Abspielen?
+Stoppen?
 
 ## Vorgehen
 - auf nehmen einer Wegstrecke
