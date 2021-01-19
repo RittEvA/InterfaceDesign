@@ -31,6 +31,7 @@ var Experiment;
     function init() {
         document.getElementById("toene").addEventListener("click", setup);
         document.getElementById("lesen").addEventListener("click", lesen);
+        document.getElementById("spielen").addEventListener("click", spielen);
     }
     //Ton auf dem Button Töne, erzeugt C4 bei klick mit dem Wert einer Halbennot
     function setup() {
@@ -38,8 +39,57 @@ var Experiment;
         note.triggerAttackRelease("C4", "2n");
         //note.stop();
     }
+    function spielen() {
+        Gkeiten = [];
+        for (let i = 0; i < Experiment.Weg2.features.length - 1; i++) {
+            //Daten der ersten Koordinaten werden in die Variablen gespeichert
+            lat1 = Experiment.Weg2.features[i].geometry.coordinates[0];
+            lon1 = Experiment.Weg2.features[i].geometry.coordinates[1];
+            time1 = convert(Experiment.Weg2.features[i].properties.time);
+            //Daten der zweiten Koordinaten werden in die Variablen gespeichert
+            lat2 = Experiment.Weg2.features[i + 1].geometry.coordinates[0];
+            lon2 = Experiment.Weg2.features[i + 1].geometry.coordinates[1];
+            time2 = convert(Experiment.Weg2.features[i + 1].properties.time);
+            hoehe = Experiment.Weg2.features[i + 1].properties.ele - Experiment.Weg2.features[i].properties.ele;
+            //alert(hoehe);
+            let strecke = distanz();
+            let zeit = dauer(time1, time2);
+            geschwindigkeit = strecke / zeit;
+            if (maxGe < geschwindigkeit) {
+                maxGe = geschwindigkeit;
+            }
+            if (minGe > geschwindigkeit) {
+                minGe = geschwindigkeit;
+            }
+            //alle Geschwindigkeiten in ein Array pushen
+            Gkeiten.push(geschwindigkeit);
+            //alle Höhendifferenzen in ein Array pushen
+            Hoehen.push(hoehe);
+        }
+        ;
+        maxMinSpanne();
+        //mit der Geschwindigkeit, den Minimalwerten, den Teilern und i wird ein Ton erzeugt
+        for (let i = 0; i < Experiment.Weg2.features.length - 1; i++) {
+            //Daten der ersten Koordinaten werden in die Variablen gespeichert
+            lat1 = Experiment.Weg2.features[i].geometry.coordinates[0];
+            lon1 = Experiment.Weg2.features[i].geometry.coordinates[1];
+            time1 = convert(Experiment.Weg2.features[i].properties.time);
+            //Daten der zweiten Koordinaten werden in die Variablen gespeichert
+            lat2 = Experiment.Weg2.features[i + 1].geometry.coordinates[0];
+            lon2 = Experiment.Weg2.features[i + 1].geometry.coordinates[1];
+            time2 = convert(Experiment.Weg2.features[i + 1].properties.time);
+            hoehe = Experiment.Weg2.features[i + 1].properties.ele - Experiment.Weg2.features[i].properties.ele;
+            //alert(hoehe);
+            let strecke = distanz();
+            let zeit = dauer(time1, time2);
+            geschwindigkeit = strecke / zeit;
+            music(geschwindigkeit, i, hoehe);
+        }
+        ;
+    }
     //durchläuft das GPS-Array und speichert in die Variablen die Längengrade(lon), Breitengrade(lat), Zeit(time) und Höhendifferenz(hoehe)
     function lesen() {
+        Gkeiten = [];
         for (let i = 0; i < Experiment.Weg1.features.length - 1; i++) {
             //Daten der ersten Koordinaten werden in die Variablen gespeichert
             lat1 = Experiment.Weg1.features[i].geometry.coordinates[0];
@@ -86,6 +136,7 @@ var Experiment;
         }
         ;
     }
+    ;
     //Stopfunktion: generator stummschalten
     //berechnet die Distanz zwischen zwei Koordinaten Punkten (Luftline)
     function distanz() {
@@ -141,33 +192,35 @@ var Experiment;
         //alert(kmh +" "+ minGe);
         switch (true) { //min; min+teiler*x (1<=x<=4)
             case (kmh < minGe):
-                alert("wass auch immer");
+                alert("Du hier?");
                 break;
             case (kmh <= minGe + teilerG * 1):
                 //2n
-                //tonlaenge="2n";
+                tonlaenge = "2n";
+                merk = 3;
                 break;
             case (kmh <= minGe + teilerG * 2):
                 //4n
                 tonlaenge = "4n";
-                merk = 1;
+                merk = 2.5;
                 break;
             case (kmh <= minGe + teilerG * 3):
                 //8n
                 tonlaenge = "8n";
-                merk = 2;
+                merk = 0.5;
                 break;
-            case (kmh <= maxGe):
+            case (kmh <= minG + teilerG * 4):
                 //16n
                 tonlaenge = "16n";
-                merk = 3;
+                merk = 0;
                 break;
             default:
-                alert("def");
+                //alert("def");
+                merk = 0;
                 break;
         }
         ;
-        alert(merk + " " + tonlaenge);
+        //alert(merk +" "+ tonlaenge);
         switch (true) { //min; min+teiler2*x (1<=x<=8)
             case (hoehe < minH):
                 break;
