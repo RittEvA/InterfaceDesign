@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" 
+creator="ViewRanger/10.11.18 http://www.viewranger.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.topografix.com/GPX/1/1"
+xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+xmlns:viewranger="http://www.viewranger.com/xmlschemas/GpxExtensions/v2"
+xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.topografix.com/GPX/gpx_style/0/2
+http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd http://www.viewranger.com/xmlschemas/GpxExtensions/v2 http://www.viewranger.com/xmlschemas/GpxExtensions/v2/GpxExtensionsV2.xsd">
+<rte>
+<name><![CDATA[Route ab Furtwangen im Schwarzwald Gehen 20.01.2021 um 14:57]]></name>
+<extensions><gpx_style:line><gpx_style:color>0000FF</gpx_style:color>
+</gpx_style:line></extensions>
+<rtept lat="48.047982" lon="8.186828">
+<name><![CDATA[WP0001]]></name>
+</rtept>
+<rtept lat="48.048210" lon="8.185629">
+<name><![CDATA[WP0002]]></name>
+</rtept>
+<rtept lat="48.046993" lon="8.184538">
+<name><![CDATA[WP0003]]></name>
+</rtept>
+<rtept lat="48.047336" lon="8.182743">
+<name><![CDATA[WP0004]]></name>
+</rtept>
+<rtept lat="48.047110" lon="8.182173">
+<name><![CDATA[WP0005]]></name>
+</rtept>
+<rtept lat="48.047828" lon="8.181195">
+<name><![CDATA[WP0006]]></name>
+</rtept>
+<rtept lat="48.049578" lon="8.175939">
+<name><![CDATA[WP0007]]></name>
+</rtept>
+<rtept lat="48.050993" lon="8.175572">
+<name><![CDATA[WP0008]]></name>
+</rtept>
+<rtept lat="48.051357" lon="8.176602">
+<name><![CDATA[WP0009]]></name>
+</rtept>
+<rtept lat="48.050813" lon="8.183832">
+<name><![CDATA[WP0010]]></name>
+</rtept>
+<rtept lat="48.050088" lon="8.185729">
+<name><![CDATA[WP0011]]></name>
+</rtept>
+<rtept lat="48.049238" lon="8.186312">
+<name><![CDATA[WP0012]]></name>
+</rtept>
+<rtept lat="48.049118" lon="8.183494">
+<name><![CDATA[WP0013]]></name>
+</rtept>
+<rtept lat="48.048774" lon="8.183252">
+<name><![CDATA[WP0014]]></name>
+</rtept>
+<rtept lat="48.047999" lon="8.186919">
+<name><![CDATA[WP0015]]></name>
+</rtept>
+<rtept lat="48.047794" lon="8.186541">
+<name><![CDATA[WP0016]]></name>
+</rtept>
+</rte>
+</gpx>

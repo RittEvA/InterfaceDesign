@@ -46,4 +46,5 @@ Was ist der Nutzungskontext? Ursprünglich: einen Weg aufnehemen und dann abspie
 - eine Testfunktion um zu schauen wie es funktioniert mit einer Variablen im Switch-Cases 
 - Switch-Cas eingebaut
 - im zweiten Switch einen Fehler ewig nicht gefunden
+- 
 

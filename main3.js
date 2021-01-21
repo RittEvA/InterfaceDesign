@@ -14,8 +14,8 @@ var Experiment;
     let note;
     let tonlaenge;
     let tonhoehe;
-    let maxG = 0;
-    let minG = 100;
+    //let maxG:number=0;
+    //let minG:number=100;
     let maxGe = 0;
     let minGe = 100;
     let spanneG;
@@ -27,8 +27,15 @@ var Experiment;
     let Gkeiten = [];
     let Hoehen = [];
     let merk = 0;
+    let canvas;
+    let crc;
+    let imageData;
     //Anfangsfunktion die EventListener verteilt, damit weitere Funktionen gestartet werden können
     function init() {
+        canvas = document.getElementsByTagName("canvas")[0];
+        crc = canvas.getContext("2d");
+        hintergrund();
+        imageData = crc.getImageData(0, 0, canvas.width, canvas.height);
         document.getElementById("toene").addEventListener("click", setup);
         document.getElementById("lesen").addEventListener("click", lesen);
         document.getElementById("spielen").addEventListener("click", spielen);
@@ -39,6 +46,30 @@ var Experiment;
         note.triggerAttackRelease("C4", "2n");
         //note.stop();
     }
+    function update() {
+        startAnimation();
+        crc.clearRect(0, 0, canvas.width, canvas.height);
+        crc.putImageData(imageData, 0, 0);
+    }
+    function hintergrund() {
+        let boden = new Path2D();
+        boden.rect(100, 100, 100, 100);
+        crc.fillStyle = "#d5b25f";
+        crc.strokeStyle = "#d5b25f";
+        crc.fill(boden);
+        crc.stroke(boden);
+        crc.beginPath();
+        crc.moveTo(26, 165);
+        crc.lineTo(19, 150);
+        crc.lineTo(12, 114);
+        crc.lineTo(43, 80);
+        crc.lineTo(66, 54);
+        crc.lineTo(82, 35);
+        crc.strokeStyle = "grey";
+        crc.stroke();
+        crc.closePath();
+    }
+    //Spielt den Weg2
     function spielen() {
         Gkeiten = [];
         for (let i = 0; i < Experiment.Weg2.features.length - 1; i++) {
@@ -209,7 +240,7 @@ var Experiment;
                 tonlaenge = "8n";
                 merk = 0.5;
                 break;
-            case (kmh <= minG + teilerG * 4):
+            case (kmh <= minGe + teilerG * 4):
                 //16n
                 tonlaenge = "16n";
                 merk = 0;

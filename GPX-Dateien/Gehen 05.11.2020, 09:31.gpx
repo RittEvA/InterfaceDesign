@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" 
+creator="ViewRanger/10.4.6 http://www.viewranger.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.topografix.com/GPX/1/1"
+xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+xmlns:viewranger="http://www.viewranger.com/xmlschemas/GpxExtensions/v3"
+xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.topografix.com/GPX/gpx_style/0/2
+http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd http://www.viewranger.com/xmlschemas/GpxExtensions/v3 http://www.viewranger.com/xmlschemas/GpxExtensions/v3/GpxExtensionsV3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+<trk>
+<name><![CDATA[Gehen 05.11.2020, 09:31]]></name>
+<type><![CDATA[Track]]></type>
+<extensions><gpx_style:line><gpx_style:color>000000</gpx_style:color></gpx_style:line>
+</extensions>
+<trkseg>
+<trkpt lat="48.340551" lon="10.770927"><ele>480.0</ele>
+<time>2020-11-05T08:30:16Z</time>
+</trkpt>
+<trkpt lat="48.340551" lon="10.770927"><ele>480.0</ele>
+<time>2020-11-05T08:30:21Z</time>
+</trkpt>
+<trkpt lat="48.340737" lon="10.770881"><ele>478.0</ele>
+<time>2020-11-05T08:30:34Z</time>
+</trkpt>
+<trkpt lat="48.340982" lon="10.770763"><ele>483.0</ele>
+<time>2020-11-05T08:30:48Z</time>
+</trkpt>
+<trkpt lat="48.341662" lon="10.771905"><ele>483.0</ele>
+<time>2020-11-05T08:31:44Z</time>
+</trkpt>
+<trkpt lat="48.341624" lon="10.771887"><ele>483.0</ele>
+<time>2020-11-05T08:31:50Z</time>
+</trkpt>
+<trkpt lat="48.341605" lon="10.771911"><ele>484.0</ele>
+<time>2020-11-05T08:31:58Z</time>
+</trkpt>
+<trkpt lat="48.341552" lon="10.772094"><ele>487.0</ele>
+<time>2020-11-05T08:32:05Z</time>
+</trkpt>
+<trkpt lat="48.341547" lon="10.772108"><ele>487.0</ele>
+<time>2020-11-05T08:32:09Z</time>
+</trkpt>
+<trkpt lat="48.341256" lon="10.773578"><ele>485.0</ele>
+<time>2020-11-05T08:32:57Z</time>
+</trkpt>
+<trkpt lat="48.341198" lon="10.773666"><ele>483.0</ele>
+<time>2020-11-05T08:33:04Z</time>
+</trkpt>
+<trkpt lat="48.341128" lon="10.773668"><ele>483.0</ele>
+<time>2020-11-05T08:33:12Z</time>
+</trkpt>
+<trkpt lat="48.340606" lon="10.772640"><ele>483.0</ele>
+<time>2020-11-05T08:33:19Z</time>
+</trkpt>
+<trkpt lat="48.340550" lon="10.772535"><ele>483.0</ele>
+<time>2020-11-05T08:33:27Z</time>
+</trkpt>
+<trkpt lat="48.340532" lon="10.772682"><ele>483.0</ele>
+<time>2020-11-05T08:33:34Z</time>
+</trkpt>
+<trkpt lat="48.340504" lon="10.772623"><ele>483.0</ele>
+<time>2020-11-05T08:33:41Z</time>
+</trkpt>
+<trkpt lat="48.340496" lon="10.772593"><ele>482.0</ele>
+<time>2020-11-05T08:34:03Z</time>
+</trkpt>
+<trkpt lat="48.340292" lon="10.772192"><ele>483.0</ele>
+<time>2020-11-05T08:34:11Z</time>
+</trkpt>
+<trkpt lat="48.340080" lon="10.771708"><ele>484.0</ele>
+<time>2020-11-05T08:34:33Z</time>
+</trkpt>
+<trkpt lat="48.339865" lon="10.771156"><ele>487.0</ele>
+<time>2020-11-05T08:34:48Z</time>
+</trkpt>
+<trkpt lat="48.339873" lon="10.771079"><ele>487.0</ele>
+<time>2020-11-05T08:35:02Z</time>
+</trkpt>
+<trkpt lat="48.339842" lon="10.771043"><ele>487.0</ele>
+<time>2020-11-05T08:35:10Z</time>
+</trkpt>
+<trkpt lat="48.340022" lon="10.770946"><ele>487.0</ele>
+<time>2020-11-05T08:35:17Z</time>
+</trkpt>
+<trkpt lat="48.340136" lon="10.770778"><ele>487.0</ele>
+<time>2020-11-05T08:35:26Z</time>
+</trkpt>
+<trkpt lat="48.340216" lon="10.770706"><ele>487.0</ele>
+<time>2020-11-05T08:35:32Z</time>
+</trkpt>
+<trkpt lat="48.340528" lon="10.770888"><ele>487.0</ele>
+<time>2020-11-05T08:35:40Z</time>
+</trkpt>
+<trkpt lat="48.340588" lon="10.770918"><ele>486.0</ele>
+<time>2020-11-05T08:35:48Z</time>
+</trkpt>
+<trkpt lat="48.340585" lon="10.770891"><ele>486.0</ele>
+<time>2020-11-05T08:35:55Z</time>
+</trkpt>
+<trkpt lat="48.340647" lon="10.770910"><ele>485.0</ele>
+<time>2020-11-05T08:36:01Z</time>
+</trkpt>
+<trkpt lat="48.340647" lon="10.770910"><ele>485.0</ele>
+<time>2020-11-05T08:36:09Z</time>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>
