@@ -29,74 +29,39 @@ namespace Experiment{
     let spanneH:number;
     let teilerH:number;
 
+    let merk:number=0;
     let Gkeiten:number[]=[];
     let Hoehen:number[]=[];
-    let merk:number=0;
+    
 
-    let canvas: HTMLCanvasElement;
-    let crc: CanvasRenderingContext2D;
-    let imageData: ImageData;
     
     //Anfangsfunktion die EventListener verteilt, damit weitere Funktionen gestartet werden können
     function init(){
-        canvas = document.getElementsByTagName("canvas")[0];
-        crc = canvas.getContext("2d");
-        hintergrund();
-        imageData = crc.getImageData(0, 0, canvas.width, canvas.height);
-
-        document.getElementById("toene").addEventListener("click", setup);
+        //document.getElementById("toene").addEventListener("click", setup);
         document.getElementById("lesen").addEventListener("click", lesen);
-        document.getElementById("spielen").addEventListener("click", spielen);
+        //document.getElementById("spielen").addEventListener("click", spielen);
     }
 
     //Ton auf dem Button Töne, erzeugt C4 bei klick mit dem Wert einer Halbennot
-    function setup(){
+    /*function setup(){
         note = new Tone.Synth().toDestination();
         note.triggerAttackRelease("C4", "2n");
         //note.stop();
     }
-    
-    function update(): void {//um die Animation am laufen zu halten
-        startAnimation();
-
-        crc.clearRect(0, 0, canvas.width, canvas.height);
-        crc.putImageData(imageData, 0, 0);
-
-    }
-
-    function hintergrund():void{
-        let boden: Path2D = new Path2D();
-        boden.rect(100, 100, 100, 100);
-        crc.fillStyle = "#d5b25f";
-        crc.strokeStyle = "#d5b25f";
-        crc.fill(boden);
-        crc.stroke(boden);
-        
-        crc.beginPath();
-        crc.moveTo(26,165);
-        crc.lineTo(19,150);
-        crc.lineTo(12,114);
-        crc.lineTo(43,80);
-        crc.lineTo(66,54);
-        crc.lineTo(82,35);
-        crc.strokeStyle = "grey";
-        crc.stroke();
-        crc.closePath();
-
-    }
-    //Spielt den Weg2
+   
+    //Spielt den Weg3
     function spielen(){
         Gkeiten=[];
-        for (let i:number=0; i < Weg2.features.length-1; i++){
+        for (let i:number=0; i < Weg3.features.length-1; i++){
             //Daten der ersten Koordinaten werden in die Variablen gespeichert
-            lat1 = Weg2.features[i].geometry.coordinates[0];
-            lon1 = Weg2.features[i].geometry.coordinates[1];
-            time1= convert(Weg2.features[i].properties.time);
+            lat1 = Weg3.features[i].geometry.coordinates[0];
+            lon1 = Weg3.features[i].geometry.coordinates[1];
+            time1= convert(Weg3.features[i].properties.time);
             //Daten der zweiten Koordinaten werden in die Variablen gespeichert
-            lat2 =Weg2.features[i+1].geometry.coordinates[0];
-            lon2=Weg2.features[i+1].geometry.coordinates[1];
-            time2= convert(Weg2.features[i+1].properties.time);
-            hoehe=Weg2.features[i+1].properties.ele - Weg2.features[i].properties.ele;
+            lat2 =Weg3.features[i+1].geometry.coordinates[0];
+            lon2=Weg3.features[i+1].geometry.coordinates[1];
+            time2= convert(Weg3.features[i+1].properties.time);
+            hoehe=Weg3.features[i+1].properties.ele - Weg3.features[i].properties.ele;
             //alert(hoehe);
             let strecke:number=distanz();
             let zeit:number=dauer(time1, time2);
@@ -112,20 +77,20 @@ namespace Experiment{
             //alle Höhendifferenzen in ein Array pushen
             Hoehen.push(hoehe);
         };
-        
+        alert(maxGe+" / "+ minGe);
         maxMinSpanne();
 
         //mit der Geschwindigkeit, den Minimalwerten, den Teilern und i wird ein Ton erzeugt
-        for (let i:number=0; i < Weg2.features.length-1; i++){
+        for (let i:number=0; i < Weg3.features.length-1; i++){
             //Daten der ersten Koordinaten werden in die Variablen gespeichert
-            lat1 = Weg2.features[i].geometry.coordinates[0];
-            lon1 = Weg2.features[i].geometry.coordinates[1];
-            time1= convert(Weg2.features[i].properties.time);
+            lat1 = Weg3.features[i].geometry.coordinates[0];
+            lon1 = Weg3.features[i].geometry.coordinates[1];
+            time1= convert(Weg3.features[i].properties.time);
             //Daten der zweiten Koordinaten werden in die Variablen gespeichert
-            lat2 =Weg2.features[i+1].geometry.coordinates[0];
-            lon2=Weg2.features[i+1].geometry.coordinates[1];
-            time2= convert(Weg2.features[i+1].properties.time);
-            hoehe=Weg2.features[i+1].properties.ele - Weg2.features[i].properties.ele;
+            lat2 =Weg3.features[i+1].geometry.coordinates[0];
+            lon2=Weg3.features[i+1].geometry.coordinates[1];
+            time2= convert(Weg3.features[i+1].properties.time);
+            hoehe=Weg3.features[i+1].properties.ele - Weg3.features[i].properties.ele;
             //alert(hoehe);
             let strecke:number=distanz();
             let zeit:number=dauer(time1, time2);
@@ -133,7 +98,7 @@ namespace Experiment{
             music(geschwindigkeit, i, hoehe);
         };
         
-    }
+    }*/
 
     //durchläuft das GPS-Array und speichert in die Variablen die Längengrade(lon), Breitengrade(lat), Zeit(time) und Höhendifferenz(hoehe)
     function lesen(){
@@ -266,12 +231,12 @@ namespace Experiment{
             case (kmh <=minGe+teilerG*3):
                 //8n
                 tonlaenge="8n";
-                merk=0.5;
+                merk=1;
                 break;
             case (kmh <=minGe+teilerG*4):
                 //16n
                 tonlaenge="16n";
-                merk=0;
+                merk=0.5;
                 break;
             default:
                 //alert("def");
