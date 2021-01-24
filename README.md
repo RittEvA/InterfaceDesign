@@ -6,7 +6,7 @@ Thema: Distanz
 Erstellen Sie ein Userinterface mit mindestens einer Ein- und einer Ausgabe.
 
 ## Grundidee
-Um gewisse Distanzen zurückzulegen, wird immer eine zeitliche als auch eine räumliche Distanz zurückgelegt. Wären diese beiden physikalischen Größen nicht von einander Abhängig wäre das Beamen bestimmt bereits Teil unseres Lebens.
+Um gewisse Distanzen zurückzulegen, wird immer eine zeitliche als auch eine räumliche Distanz zurückgelegt. Wären diese beiden physikalischen Größen nicht von einander Abhängig wäre das "Beamen" bestimmt bereits Teil unseres Lebens.
 Viele Dinge werden mit Hilfe von Raum und Zeit angegeben. So sind Töne, Licht und unweigerlich Farben mit Wellen darstellbar. Beim Wandern oder generell im Leben hat man Höhen und Tiefen, diese können auch mit Wellen dargestellt werden. 
 Auch Höhenprofile weisen Wellen die von Distanz und Höhenmetern abhänig sind.
 Die zuverarbeitenden Größen sind Distanz und Höhenmeter, diese werden zu Tonlänge und Tonhöhe. Im Gesamten ergibt es eine Reihenfolge von Tönen die dann für den Nutzer auditiv wieder gegeben werden.
