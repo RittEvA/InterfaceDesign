@@ -1,7 +1,7 @@
 # InterfaceDesign
 
 
-# Sound Of Silence
+# Sound Of Distanz
 Thema: Distanz
 Erstellen Sie ein Userinterface mit mindestens einer Ein- und einer Ausgabe.
  Links
